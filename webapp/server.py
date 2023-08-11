@@ -1,8 +1,7 @@
 from flask import Flask, render_template
 from webapp.form import FlaskUserForm
-from db import db
-from db import UserForm
-from send_mail import sendMail
+from webapp.db import db, UserForm
+from webapp.send_mail import sendMail
 
 
 def create_app():
