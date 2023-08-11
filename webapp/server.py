@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from form import FlaskUserForm
+from webapp.form import FlaskUserForm
 from db import db
 from db import UserForm
 from send_mail import sendMail
