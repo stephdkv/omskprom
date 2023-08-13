@@ -63,17 +63,21 @@ tl.from(".main-blocks", {
 });
 tl.add(btnAnimation);
 
-gsap.to(".content-fixed", {
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".content-stop",
-    start: "top 80%",
-    end: "2400",
-    scrub: 4,
-    toggleActions: "restart none none none",
-    pin: ".content-fixed",
-    pinSpacing: true,
-  },
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 568) {
+    gsap.to(".content-fixed", {
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".content-stop",
+        start: "top 80%",
+        end: "2400",
+        scrub: 4,
+        toggleActions: "restart none none none",
+        pin: ".content-fixed",
+        pinSpacing: true,
+      },
+    });
+  }
 });
 
 let contentT = gsap.utils.toArray(".content-fixed .fixed-title");
